@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            padding: 10px 20px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        .body {
+            height: 100%;
+        }
+
+        .body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #121212;
+        }
+
+        .progress-container {
+            height: 0.8rem;
+            width: 28.8rem;
+            border-radius: 0.4rem;
+
+            background: #000;
+        }
+
+        .progress-container .progress {
+            height: 100%;
+            width: 0;
+            border-radius: 0.4rem;
+
+            background: #ff4754;
+
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay="autoplay" loop>
+        <source src="oynanisMuzigi.mp3" />
+    </audio>
+    <div class="progress-container" class="body">
+        <div class="progress" class="body"></div>
+    </div>
+    <p
+        style="color: white; font-family: sans-serif; margin-bottom: 6px; font-size: 50px; margin-top:5%; text-align: center;">
+        <span>Puan: </span><span id="puanElementi">0</span>
+    </p>
+    <canvas style="margin: 0 auto; display: block; margin-left: 4%;"></canvas>
+    <script src="bolum1.js"></script>
+    <script>
+        const progressbar = document.querySelector(".progress");
+
+        const changeProgress = (progress) => {
+            progressbar.style.width = `${progress}%`;
+        };
+        /* change progress after 1 second (only for showcase) */
+        setTimeout(() => changeProgress(100), 0);
+        setTimeout(() => changeProgress(100), 1000);
+        setTimeout(() => changeProgress(95), 2000);
+        setTimeout(() => changeProgress(90), 3000);
+        setTimeout(() => changeProgress(85), 4000);
+        setTimeout(() => changeProgress(80), 5000);
+        setTimeout(() => changeProgress(75), 6000);
+        setTimeout(() => changeProgress(70), 7000);
+        setTimeout(() => changeProgress(65), 8000);
+        setTimeout(() => changeProgress(60), 9000);
+        setTimeout(() => changeProgress(55), 10000);
+        setTimeout(() => changeProgress(50), 11000);
+        setTimeout(() => changeProgress(45), 12000);
+        setTimeout(() => changeProgress(40), 13000);
+        setTimeout(() => changeProgress(35), 14000);
+        setTimeout(() => changeProgress(30), 15000);
+        setTimeout(() => changeProgress(25), 16000);
+        setTimeout(() => changeProgress(20), 17000);
+        setTimeout(() => changeProgress(15), 18000);
+        setTimeout(() => changeProgress(10), 19000);
+        setTimeout(() => changeProgress(5), 20000);
+        setTimeout(() => { changeProgress(0); window.location.href = "yenidenBaslaEkrani.html" }, 21000);
+
+
+    </script>
+</body>
+
+</html>

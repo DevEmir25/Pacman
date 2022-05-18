@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="main.js"></script>
+    <style>
+        body {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            margin-top: 0%;
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+        }
+
+        .background-one {
+            background-color: #151515;
+        }
+
+
+        .background-three {
+            background-color: #151515;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+        }
+
+        button {
+            cursor: pointer;
+            border: 1px solid #3498db;
+            background-color: transparent;
+            height: 50px;
+            width: 200px;
+            color: #3498db;
+            font-size: 1.5em;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+
+        }
+
+        .link-one {
+            color: #53d9d1;
+            width: 400px;
+            transition: color 1s cubic-bezier(0.32, 0, 0.67, 0);
+            line-height: 1em;
+        }
+
+        .link-one:hover {
+            color: #111;
+            transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
+        }
+
+        .link-one::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: yellow;
+
+            clip-path: circle(0% at 50% calc(50%));
+            transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .link-one:hover::before {
+            clip-path: circle(100% at 50% 50%);
+        }
+
+        .link-one::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            background-color: #151515;
+
+            clip-path: polygon(40% 0%,
+                    60% 0%,
+                    60% 0%,
+                    40% 0%,
+                    40% 100%,
+                    60% 100%,
+                    60% 100%,
+                    40% 100%);
+            transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .link-one:hover::after {
+            clip-path: polygon(40% 10%,
+                    60% 10%,
+                    60% 35%,
+                    40% 35%,
+                    40% 90%,
+                    60% 90%,
+                    60% 65%,
+                    40% 65%);
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay="autoplay">
+        <source src="kaybettin.mp3" />     
+    </audio>
+    <div class="background-two link-container">
+        <p class = "link-two" onclick="anaMenuyeDon()"></p>
+    </div>
+    <div class="background-one">
+        <div class="link-container"><br>
+            <button class="link-one" onclick="yenidenBasla()">Yeniden Başla</button>
+        </div>
+    </div>
+    <script>
+        require('./index.js')
+        function yenidenBasla() {
+            window.location.href = "bolum1.html";
+        }
+    </script>
+</body>
+
+</html>

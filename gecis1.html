@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* general styling */
+        :root {
+            --smaller: .75;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            align-items: center;
+            background-color: #ffd54f;
+            display: flex;
+            font-family: -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
+        }
+
+        .container {
+            color: #333;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: bold;
+            letter-spacing: .125rem;
+            text-transform: uppercase;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 10.5em;
+            list-style-type: none;
+            padding: 1em;
+            text-transform: uppercase;
+        }
+
+        li span {
+            display: block;
+            font-size: 4.5rem;
+        }
+
+        @media all and (max-width: 768px) {
+            h1 {
+                font-size: calc(3.5rem * var(--smaller));
+            }
+
+            li {
+                font-size: calc(3.125rem * var(--smaller));
+            }
+
+            li span {
+                font-size: calc(9.375rem * var(--smaller));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay="autoplay">
+        <source src="geriSayim.mp3" />     
+    </audio>
+    <div class="container">
+        <h1 id="headline">HAZIR !!</h1>
+
+        <div id="countdown" style="font-size: 50px;">
+            <ul>
+                <li><span id="seconds"></span></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var timeleft = 3;
+        var downloadTimer = setInterval(function () {
+            if (timeleft <= 0) {
+                clearInterval(downloadTimer);
+                window.location.href = "bolum1.html"
+            } else {
+                document.getElementById("countdown").innerHTML = timeleft;
+            }
+            timeleft -= 1;
+        }, 1000);
+    </script>
+</body>
+
+</html>
