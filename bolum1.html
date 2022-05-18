@@ -77,7 +77,7 @@
         function saniye(saniye){
             return saniye * 1000;
         }
-        const sure = 16;
+        const sure = 17;
         setTimeout(() => zamanlayici(geriSayim(sure,0)), saniye(0));
         setTimeout(() => zamanlayici(geriSayim(sure,1)), saniye(1));
         setTimeout(() => zamanlayici(geriSayim(sure,2)), saniye(2));
@@ -94,9 +94,8 @@
         setTimeout(() => zamanlayici(geriSayim(sure,13)), saniye(13));
         setTimeout(() => zamanlayici(geriSayim(sure,14)), saniye(14));
         setTimeout(() => zamanlayici(geriSayim(sure,15)), saniye(15));
-        setTimeout(() => { zamanlayici(geriSayim(sure,16)); window.location.href = "yenidenBaslaEkrani.html" }, saniye(16));
-
-
+        setTimeout(() => zamanlayici(geriSayim(sure,16)), saniye(16));
+        setTimeout(() => { zamanlayici(geriSayim(sure,17)); window.location.href = "yenidenBaslaEkrani.html" }, saniye(17));
     </script>
 </body>
 
