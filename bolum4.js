@@ -412,8 +412,8 @@ function dusmanlariGuncelle() {
 const kazandinMuzik = new Audio('sesler/kazandin.mp3');
 function kaybettin() {
     cancelAnimationFrame(animasyonId);
-    window.location.href = "yenidenBaslaEkrani.html" 
-    
+    window.location.href = "yenidenBaslaEkrani.html"
+
 }
 function kazandin() {
     setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
@@ -445,6 +445,14 @@ addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algıl
             break;
         case 'd': tuslar.d.basildi = true; sonTus = 'd';
             break;
+        case 'W': tuslar.w.basildi = true; sonTus = 'w';
+            break;
+        case 'A': tuslar.a.basildi = true; sonTus = 'a';
+            break;
+        case 'S': tuslar.s.basildi = true; sonTus = 's';
+            break;
+        case 'D': tuslar.d.basildi = true; sonTus = 'd';
+            break;
         case 'ArrowUp': tuslar.ArrowUp.basildi = true; sonTus = 'w';
             break;
         case 'ArrowLeft': tuslar.ArrowLeft.basildi = true; sonTus = 'a';
@@ -453,7 +461,7 @@ addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algıl
             break;
         case 'ArrowRight': tuslar.ArrowRight.basildi = true; sonTus = 'd';
             break;
-        case 'Escape': window.location.href = "cikisEkrani.html";
+        case 'Escape': window.location.href = "cikisEkrani.html"
             break;
     }
 })
@@ -466,6 +474,14 @@ addEventListener('keyup', ({ key }) => {
         case 's': tuslar.s.basildi = false;
             break;
         case 'd': tuslar.d.basildi = false;
+            break;
+        case 'W': tuslar.w.basildi = false;
+            break;
+        case 'A': tuslar.a.basildi = false;
+            break;
+        case 'S': tuslar.s.basildi = false;
+            break;
+        case 'D': tuslar.d.basildi = false;
             break;
         case 'ArrowUp': tuslar.ArrowUp.basildi = false;
             break;
