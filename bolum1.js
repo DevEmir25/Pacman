@@ -32,8 +32,8 @@ class Oyuncu {
         this.konum = konum;
         this.hiz = hiz;
         this.yaricap = yaricap;
-        this.agizAcikligi = 0.7;
-        this.isirmaHizi = 0.04;
+        this.agizAcikligi = 0.77;
+        this.isirmaHizi = 0.042;
         this.donmeAcisi = 0;
     }
 
@@ -61,7 +61,7 @@ class Oyuncu {
         this.ciz();
         this.konum.x += this.hiz.x;
         this.konum.y += this.hiz.y;
-        if (this.agizAcikligi < 0 || this.agizAcikligi > 0.7) {
+        if (this.agizAcikligi < 0 || this.agizAcikligi > 0.77) {
             this.isirmaHizi = -this.isirmaHizi;
         }
         this.agizAcikligi += this.isirmaHizi;
@@ -405,7 +405,6 @@ function kaybettin() {
 function kazandin() {
     setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
     window.location.href = "gecis2.html"
-
 }
 
 let animasyonId
