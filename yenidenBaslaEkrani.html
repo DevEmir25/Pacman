@@ -114,10 +114,10 @@
 
 <body>
     <audio autoplay="autoplay">
-        <source src="sesler/kaybettin.mp3" />     
+        <source src="sesler/kaybettin.mp3" />
     </audio>
     <div class="background-two link-container">
-        <p class = "link-two" onclick="anaMenuyeDon()"></p>
+        <p class="link-two" onclick="anaMenuyeDon()"></p>
     </div>
     <div class="background-one">
         <div class="link-container"><br>
@@ -125,7 +125,14 @@
         </div>
     </div>
     <script>
-        require('./index.js')
+        addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+            switch (key) {
+                case 'Enter': window.location.href = "bolum1.html";
+                    break;
+                case ' ': window.location.href = "bolum1.html";
+                    break;
+            }
+        })
         function yenidenBasla() {
             window.location.href = "bolum1.html";
         }
