@@ -19,11 +19,12 @@
   <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    body{
+    body {
       overflow-x: hidden;
       overflow-y: hidden;
       margin-top: 0%;
     }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -91,7 +92,7 @@
   <header class="mb-auto">
     <div>
       <h3 class="float-md-start mb-0" style="color: yellow;"></h3><br><br><br>
-      <p style="color: yellow; font-size: 55px; text-align: center; font-weight: bold; margin-top: 0%;" >PACMAN</p>
+      <p style="color: yellow; font-size: 55px; text-align: center; font-weight: bold; margin-top: 0%;">PACMAN</p>
     </div>
   </header>
 
@@ -105,16 +106,26 @@
       context.fillStyle = "yellow";
       context.fill();
     </script>
-    
+
     <p class="lead">
-      <button href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white" onclick="oyunaBasla()" style="margin-bottom: 100px">Oyuna Basla</button>
+      <button href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white" onclick="oyunaBasla()"
+        style="margin-bottom: 100px">Oyuna Basla</button>
     </p>
   </main>
   <script>
     const tabi = new Audio("sesler/tabiEfendim.mp3");
-    function oyunaBasla()
-    {
-      setTimeout(() => {window.location.href = "gecis1.html";},1000)
+    addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+      switch (key) {
+        case 'Enter': setTimeout(() => { window.location.href = "gecis1.html"; }, 1000)
+          tabi.play();
+          break;
+        case ' ': setTimeout(() => { window.location.href = "gecis1.html"; }, 1000)
+          tabi.play();
+          break;
+      }
+    })
+    function oyunaBasla() {
+      setTimeout(() => { window.location.href = "gecis1.html"; }, 1000)
       tabi.play();
     }
   </script>
