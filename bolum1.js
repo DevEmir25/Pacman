@@ -32,8 +32,8 @@ class Oyuncu {
         this.konum = konum;
         this.hiz = hiz;
         this.yaricap = yaricap;
-        this.agizAcikligi = 0.7;
-        this.isirmaHizi = 0.04;
+        this.agizAcikligi = 0.77;
+        this.isirmaHizi = 0.042;
         this.donmeAcisi = 0;
     }
 
@@ -61,7 +61,7 @@ class Oyuncu {
         this.ciz();
         this.konum.x += this.hiz.x;
         this.konum.y += this.hiz.y;
-        if (this.agizAcikligi < 0 || this.agizAcikligi > 0.7) {
+        if (this.agizAcikligi < 0 || this.agizAcikligi > 0.77) {
             this.isirmaHizi = -this.isirmaHizi;
         }
         this.agizAcikligi += this.isirmaHizi;
@@ -405,7 +405,6 @@ function kaybettin() {
 function kazandin() {
     setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
     window.location.href = "gecis2.html"
-
 }
 
 let animasyonId
@@ -431,6 +430,14 @@ addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algıl
             break;
         case 'd': tuslar.d.basildi = true; sonTus = 'd';
             break;
+        case 'W': tuslar.w.basildi = true; sonTus = 'w';
+            break;
+        case 'A': tuslar.a.basildi = true; sonTus = 'a';
+            break;
+        case 'S': tuslar.s.basildi = true; sonTus = 's';
+            break;
+        case 'D': tuslar.d.basildi = true; sonTus = 'd';
+            break;
         case 'ArrowUp': tuslar.ArrowUp.basildi = true; sonTus = 'w';
             break;
         case 'ArrowLeft': tuslar.ArrowLeft.basildi = true; sonTus = 'a';
@@ -439,7 +446,7 @@ addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algıl
             break;
         case 'ArrowRight': tuslar.ArrowRight.basildi = true; sonTus = 'd';
             break;
-        case 'Escape':window.location.href = "cikisEkrani.html"
+        case 'Escape': window.location.href = "cikisEkrani.html"
             break;
     }
 })
@@ -452,6 +459,14 @@ addEventListener('keyup', ({ key }) => {
         case 's': tuslar.s.basildi = false;
             break;
         case 'd': tuslar.d.basildi = false;
+            break;
+        case 'W': tuslar.w.basildi = false;
+            break;
+        case 'A': tuslar.a.basildi = false;
+            break;
+        case 'S': tuslar.s.basildi = false;
+            break;
+        case 'D': tuslar.d.basildi = false;
             break;
         case 'ArrowUp': tuslar.ArrowUp.basildi = false;
             break;

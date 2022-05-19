@@ -84,7 +84,7 @@
 
 <body class="d-flex h-100 text-center text-white bg-dark">
   <audio autoplay="autoplay">
-    <source src="bitis.mp3" />
+    <source src="sesler/kazandin.mp3" />
   </audio>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -116,8 +116,10 @@
       </p>
     </main>
     <script>
+      const tabi = new Audio("sesler/tabiEfendim.mp3");
       function oyunaBasla() {
-        window.location.href = "girisEkrani.html";
+        setTimeout(() => { window.location.href = "girisEkrani.html"; }, 1000)
+        tabi.play();
       }
     </script>
     <footer class="mt-auto text-white-50">

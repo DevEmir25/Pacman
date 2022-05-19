@@ -111,9 +111,11 @@
     </p>
   </main>
   <script>
+    const tabi = new Audio("sesler/tabiEfendim.mp3");
     function oyunaBasla()
     {
-      window.location.href = "gecis1.html";
+      setTimeout(() => {window.location.href = "gecis1.html";},1000)
+      tabi.play();
     }
   </script>
   <footer class="mt-auto text-white-50">

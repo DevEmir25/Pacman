@@ -3,7 +3,6 @@
 
 <head>
     <style>
-        /* general styling */
         :root {
             --smaller: .75;
         }
@@ -78,12 +77,12 @@
 
 <body>
     <audio autoplay="autoplay">
-        <source src="geriSayim.mp3" />     
+        <source src="sesler/geriSayim.mp3" />     
     </audio>
     <div class="container">
         <h1 id="headline">HAZIR !!</h1>
 
-        <div id="countdown" style="font-size: 50px;">
+        <div id="geriSayimId" style="font-size: 50px;">
             <ul>
                 <li><span id="seconds"></span></li>
             </ul>
@@ -96,7 +95,7 @@
                 clearInterval(downloadTimer);
                 window.location.href = "bolum1.html"
             } else {
-                document.getElementById("countdown").innerHTML = timeleft;
+                document.getElementById("geriSayimId").innerHTML = timeleft;
             }
             timeleft -= 1;
         }, 1000);
