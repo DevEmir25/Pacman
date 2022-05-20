@@ -4,7 +4,7 @@ const puanElementi = document.querySelector('#puanElementi');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
-const guclendirmeSuresi = 1000; //ms
+const guclendirmeSuresi = 1200; //ms
 const surat = 2; //oyuncunun sürati
 const dusmanSurat = 1; //düşmanın sürati
 const dusmanYaricap = 19; //düşmanın yarıçapı
