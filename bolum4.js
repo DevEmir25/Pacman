@@ -4,6 +4,7 @@ const puanElementi = document.querySelector('#puanElementi');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+const guclendirmeSuresi = 1000; //ms
 const surat = 2; //oyuncunun sürati
 const dusmanSurat = 1; //düşmanın sürati
 const dusmanYaricap = 19; //düşmanın yarıçapı
@@ -399,7 +400,7 @@ function dusmanlariGuncelle() {
                     dusman.korktu = true;
                     setTimeout(() => {
                         dusman.korktu = false;
-                    }, 3000   // güçlendirme süresi (milisaniye)
+                    }, guclendirmeSuresi
                     )
                 })
             }
@@ -409,17 +410,13 @@ function dusmanlariGuncelle() {
         kazandin();
     }
 }
-const kazandinMuzik = new Audio('sesler/kazandin.mp3');
 function kaybettin() {
     cancelAnimationFrame(animasyonId);
     window.location.href = "yenidenBaslaEkrani.html"
 
 }
 function kazandin() {
-    setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
-    kazandinMuzik.play();
-    setTimeout(() => { console.log('sonraki sayfa') }, 8000)
-    window.location.href = "bitisEkrani.html"
+    setTimeout(() => { cancelAnimationFrame(animasyonId), window.location.href = "bitisEkrani.html" }, 40)
 }
 
 let animasyonId

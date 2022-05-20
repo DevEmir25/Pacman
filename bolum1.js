@@ -403,8 +403,7 @@ function kaybettin() {
     window.location.href = "yenidenBaslaEkrani.html"
 }
 function kazandin() {
-    setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
-    window.location.href = "gecis2.html"
+    setTimeout(() => { cancelAnimationFrame(animasyonId), window.location.href = "gecis2.html" }, 40)
 }
 
 let animasyonId
