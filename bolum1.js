@@ -9,7 +9,6 @@ const dusmanSurat = 1; //düşmanın sürati
 const dusmanYaricap = 19; //düşmanın yarıçapı
 const yaricap = 18; //oyuncunun yarıçapı
 const yemYaricap = yaricap / 6;
-const guclendirmeYaricap = yaricap / 2.5;
 const kenarUzunluk = 40; //duvarın kenar uzunluğu
 
 class Duvar {
@@ -127,29 +126,8 @@ class Yem {
         c.closePath();
     }
 }
-class Guclendirme {
-    constructor({ konum }) {
-        this.konum = konum;
-        this.yaricap = guclendirmeYaricap;
-    }
-
-    ciz() {
-        c.beginPath();
-        c.arc(
-            this.konum.x,
-            this.konum.y,
-            this.yaricap,
-            0,
-            Math.PI * 2
-        )
-        c.fillStyle = 'white';
-        c.fill();
-        c.closePath();
-    }
-}
 const duvarlar = [];
 const yemler = [];
-const guclendirmeler = [];
 const dusmanlar = [
     new Dusman({
         konum: {
@@ -292,12 +270,7 @@ function dusmanlariGuncelle() {
         dusman.guncelle();
         // düşman ile oyuncu çarpıştı
         if (Math.hypot(dusman.konum.x - oyuncu.konum.x, dusman.konum.y - oyuncu.konum.y) < dusman.yaricap + oyuncu.yaricap) { //oyunu kaybetme koşulu
-            if (dusman.korktu) {
-                dusmanlar.splice(i, 1);
-            }
-            else {
-                kaybettin();
-            }
+            kaybettin();
         }
         const carpmalar = [];
         duvarlar.forEach(duvar => {
@@ -373,24 +346,6 @@ function dusmanlariGuncelle() {
                     break;
             }
             dusman.sonCarpmalar = [];
-
-        }
-
-        for (let i = guclendirmeler.length - 1; 0 <= i; i--) {
-            const guclendirme = guclendirmeler[i];
-            guclendirme.ciz();
-            //güçlendirme ile oyuncu çarpıştı
-            if (Math.hypot(guclendirme.konum.x - oyuncu.konum.x, guclendirme.konum.y - oyuncu.konum.y) < guclendirme.yaricap + oyuncu.yaricap) {
-                guclendirmeler.splice(i, 1);
-                puan += 30;
-                dusmanlar.forEach((dusman) => {
-                    dusman.korktu = true;
-                    setTimeout(() => {
-                        dusman.korktu = false;
-                    }, 3000   // güçlendirme süresi (milisaniye)
-                    )
-                })
-            }
         }
     });
     if (puan == 650) {
@@ -403,8 +358,7 @@ function kaybettin() {
     window.location.href = "yenidenBaslaEkrani.html"
 }
 function kazandin() {
-    setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
-    window.location.href = "gecis2.html"
+    setTimeout(() => { cancelAnimationFrame(animasyonId), window.location.href = "gecis2.html" }, 40)
 }
 
 let animasyonId
@@ -505,14 +459,6 @@ harita.forEach((satir, i) => { //haritayı inşa eder
         switch (sembol) {
             case ' ': yemler.push(
                 new Yem({
-                    konum: {
-                        x: kenarUzunluk * j + kenarUzunluk / 2,
-                        y: kenarUzunluk * i + kenarUzunluk / 2,
-                    }
-                })
-            ); break;
-            case '*': guclendirmeler.push(
-                new Guclendirme({
                     konum: {
                         x: kenarUzunluk * j + kenarUzunluk / 2,
                         y: kenarUzunluk * i + kenarUzunluk / 2,

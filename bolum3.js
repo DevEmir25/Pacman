@@ -4,6 +4,7 @@ const puanElementi = document.querySelector('#puanElementi');
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+const guclendirmeSuresi = 1200; //ms
 const surat = 2; //oyuncunun sürati
 const dusmanSurat = 1; //düşmanın sürati
 const dusmanYaricap = 19; //düşmanın yarıçapı
@@ -398,7 +399,7 @@ function dusmanlariGuncelle() {
                     dusman.korktu = true;
                     setTimeout(() => {
                         dusman.korktu = false;
-                    }, 3000   // güçlendirme süresi (milisaniye)
+                    }, guclendirmeSuresi
                     )
                 })
             }
@@ -415,8 +416,8 @@ function kaybettin() {
 
 }
 function kazandin() {
-    setTimeout(() => { cancelAnimationFrame(animasyonId) }, 80)
-    window.location.href = "gecis4.html"
+    setTimeout(() => { cancelAnimationFrame(animasyonId), window.location.href = "gecis4.html" }, 40)
+
 }
 
 let animasyonId
