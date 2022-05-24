@@ -412,7 +412,7 @@ function dusmanlariGuncelle() {
 
 function kaybettin() {
     cancelAnimationFrame(animasyonId);
-    window.location.href = "yenidenBaslaEkrani.html"
+    window.location.href = "yenidenBaslaEkrani3.html"
 
 }
 function kazandin() {
