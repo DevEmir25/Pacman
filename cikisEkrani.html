@@ -240,7 +240,7 @@
         <button class="link-three" onclick="kapat()" id="kptbtn">Kapat</button>
     </div>
     <script>
-        require('./index.js')
+
         function yenidenBasla() {
             window.location.href = "bolum1.html";
         }
@@ -248,11 +248,6 @@
             window.location.href = "girisEkrani.html";
         }
 
-        function kapat() {
-            const remote = require('electron').remote
-            let w = remote.getCurrentWindow()
-            w.close()
-        }
     </script>
 </body>
 
