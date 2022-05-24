@@ -431,6 +431,7 @@ function oynat() {
 }
 
 oynat(); //oyunun her karesini çizen fonksiyon
+setTimeout(() => { oynat()}, 8000)  //oyunun her karesini çizen fonksiyon
 
 var sonTus = '';
 addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
