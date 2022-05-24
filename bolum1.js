@@ -82,7 +82,6 @@ class Dusman {
         this.yaricap = dusmanYaricap;
         this.renk = renk;
         this.sonCarpmalar = [];
-        this.korktu = false;
     }
 
     ciz() {
@@ -94,7 +93,7 @@ class Dusman {
             0,
             Math.PI * 2
         )
-        c.fillStyle = this.korktu ? 'blue' : this.renk;
+        c.fillStyle = this.renk;
         c.fill();
         c.closePath();
     }
@@ -373,7 +372,7 @@ function oynat() {
 
 
 oynat(); //oyunun her karesini çizen fonksiyon
-setTimeout(() => { oynat()}, 8000)  //oyunun her karesini çizen fonksiyon
+setTimeout(() => { oynat() }, 8000)  //oyunun her karesini çizen fonksiyon
 
 var sonTus = '';
 addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
