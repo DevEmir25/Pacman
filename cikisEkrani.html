@@ -241,8 +241,10 @@
     </div>
     <script>
 
-        function yenidenBasla() {
-            window.location.href = "bolum1.html";
+        function kapat() {
+            const { ipcRenderer } = require('electron')
+            const ipc = ipcRenderer;
+            ipc.send('kapat');
         }
         function anaMenuyeDon() {
             window.location.href = "girisEkrani.html";

@@ -1,6 +1,6 @@
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
-
+const ipc = ipcMain;
 
 
 
@@ -12,10 +12,12 @@ function createWindow() {
     width: 500,
     height: 700,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   })
 
+  ipc.on('kapat', () => { win.close() })
   win.loadFile('girisEkrani.html')
 }
 
