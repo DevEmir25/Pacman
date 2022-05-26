@@ -5,4 +5,4 @@ Bu proje görsel programlama finali için yapılmış olduğu için kodlar olabi
 Kontroller___<br>
 w,a,s,d   veya   ok tuşları
 <br><br>
-oyun başladıktan sonra ESC tuşuı ile ana menüye dönebilir ya da uygulamayı kapatabilirsiniz.
+ESC tuşu ile ana menüye dönebilir ya da uygulamayı kapatabilirsiniz.
