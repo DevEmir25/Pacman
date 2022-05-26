@@ -125,11 +125,13 @@
         </div>
     </div>
     <script>
-        addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+       addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
             switch (key) {
                 case 'Enter': yenidenBasla();
                     break;
                 case ' ': yenidenBasla();
+                    break;
+                case 'Escape': window.location.href = "cikisEkrani.html";
                     break;
             }
         })

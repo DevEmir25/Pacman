@@ -77,7 +77,7 @@
 
 <body>
     <audio autoplay="autoplay">
-        <source src="sesler/geriSayim.mp3" />     
+        <source src="sesler/geriSayim.mp3" />
     </audio>
     <div class="container">
         <h1 id="headline">HAZIR !!</h1>
@@ -89,6 +89,12 @@
         </div>
     </div>
     <script>
+        addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+            switch (key) {
+                case 'Escape': window.location.href = "cikisEkrani.html";
+                    break;
+            }
+        })
         var timeleft = 3;
         var downloadTimer = setInterval(function () {
             if (timeleft <= 0) {

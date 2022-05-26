@@ -116,6 +116,12 @@
       </p>
     </main>
     <script>
+       addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+            switch (key) {
+                case 'Escape': window.location.href = "cikisEkrani.html";
+                    break;
+            }
+        })
       const tabi = new Audio("sesler/tabiEfendim.mp3");
       function oyunaBasla() {
         setTimeout(() => { window.location.href = "girisEkrani.html"; }, 1000)

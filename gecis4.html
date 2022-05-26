@@ -90,6 +90,12 @@
         </div>
     </div>
     <script>
+         addEventListener('keydown', ({ key }) => { //hangi tuşa basıldığını algılar
+            switch (key) {
+                case 'Escape': window.location.href = "cikisEkrani.html";
+                    break;
+            }
+        })
         var timeleft = 3;
         var downloadTimer = setInterval(function () {
             if (timeleft <= 0) {
