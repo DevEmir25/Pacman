@@ -6,3 +6,5 @@ Kontroller___<br>
 w,a,s,d   veya   ok tuşları
 <br><br>
 ESC tuşu ile ana menüye dönebilir ya da uygulamayı kapatabilirsiniz.
+
+https://www.youtube.com/watch?v=mvzZfIm-xxE
